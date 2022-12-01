@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\SecurityUser;
+use App\Entity\Video;
 use App\Form\RegisterUserType;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -14,6 +15,21 @@ use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
 class DefaultController extends AbstractController
 {
+
+    #[Route('/default/{id}/delete-video', name: 'delete_video')]
+    public function deleteVideo(
+        Request $request,
+        UserPasswordHasherInterface $passwordHasher,
+        EntityManagerInterface $entityManager,
+        Video $video
+    ): Response
+    {
+        $this->denyAccessUnlessGranted('ROLE_ADMIN', null, 'User tried to access a page without having ROLE_ADMIN');
+        dd($video);
+
+        return new Response('Video deleted');
+    }
+
     #[Route('/default', name: 'app_default')]
     public function index(
         Request $request,
