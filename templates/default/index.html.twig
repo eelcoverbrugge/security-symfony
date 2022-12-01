@@ -18,5 +18,11 @@
     </ul>
 
     {{ form(form) }}
+
+    {% if app.user %}
+        <a href="{{ path('logout') }}">Logout</a>
+    {% else %}
+        <a href="{{ path('login') }}">login</a>
+    {% endif %}
 </div>
 {% endblock %}

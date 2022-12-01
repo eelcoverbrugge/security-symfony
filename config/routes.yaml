@@ -1,3 +1,7 @@
 #index:
 #    path: /
 #    controller: App\Controller\DefaultController::index
+
+# Since Symfony will handle logout for you, you don't need any logic e.g. this route for logout will be enough
+logout:
+  path: /logout
