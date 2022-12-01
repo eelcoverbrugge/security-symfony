@@ -16,7 +16,7 @@ use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 class DefaultController extends AbstractController
 {
 
-    #[Route('/default/{id}/delete-video', name: 'delete_video')]
+    #[Route('/admin/{id}/delete-video', name: 'delete_video')]
     public function deleteVideo(
         Request $request,
         UserPasswordHasherInterface $passwordHasher,
@@ -24,7 +24,6 @@ class DefaultController extends AbstractController
         Video $video
     ): Response
     {
-        $this->denyAccessUnlessGranted('ROLE_ADMIN', null, 'User tried to access a page without having ROLE_ADMIN');
         dd($video);
 
         return new Response('Video deleted');
