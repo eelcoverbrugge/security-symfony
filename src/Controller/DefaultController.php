@@ -39,6 +39,7 @@ class DefaultController extends AbstractController
     ): Response
     {
         $service->someAction();
+        $service->someParams();
         $users = $entityManager->getRepository(SecurityUser::class)->findAll();
 
         dump($users);

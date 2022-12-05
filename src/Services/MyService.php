@@ -9,6 +9,10 @@ class MyService
      */
     use OptionalServiceTrait;
 
+    public $my;
+
+    public $logger;
+
     public function __construct(
 //        MySecondService $mySecondService
     )
@@ -20,5 +24,11 @@ class MyService
     public function someAction()
     {
         dump($this->service->doSomething());
+    }
+
+    public function someParams()
+    {
+        dump($this->my);
+        dump($this->logger);
     }
 }
