@@ -29,7 +29,7 @@ services:
 
     App\Services\MyService:
         arguments:
-            $mySecondService: '@App\Services\MySecondService'
+#            $mySecondService: '@App\Services\MySecondService'
 
     App\Services\MySecondService:
         arguments:

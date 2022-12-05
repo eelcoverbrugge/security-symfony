@@ -15,4 +15,9 @@ class MySecondService
         dump($adminEmail);
         dump($globalParam);
     }
+
+    public function doSomething()
+    {
+        return 'wow!';
+    }
 }

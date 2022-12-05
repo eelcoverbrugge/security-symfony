@@ -35,9 +35,10 @@ class DefaultController extends AbstractController
         Request $request,
         UserPasswordHasherInterface $passwordHasher,
         EntityManagerInterface $entityManager,
-        MyService $myService
+        MyService $service
     ): Response
     {
+        $service->someAction();
         $users = $entityManager->getRepository(SecurityUser::class)->findAll();
 
         dump($users);
