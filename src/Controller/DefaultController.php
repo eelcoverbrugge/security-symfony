@@ -12,6 +12,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
+use App\Services\MyService;
 
 class DefaultController extends AbstractController
 {
@@ -33,7 +34,8 @@ class DefaultController extends AbstractController
     public function index(
         Request $request,
         UserPasswordHasherInterface $passwordHasher,
-        EntityManagerInterface $entityManager
+        EntityManagerInterface $entityManager,
+        MyService $myService
     ): Response
     {
         $users = $entityManager->getRepository(SecurityUser::class)->findAll();
