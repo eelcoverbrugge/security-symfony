@@ -29,5 +29,9 @@ services:
 
     App\Services\MyService:
         arguments:
+            $mySecondService: '@App\Services\MySecondService'
+
+    App\Services\MySecondService:
+        arguments:
             $param: 'some param'
             $adminEmail: '%admin_email%' # refers to parameters above
