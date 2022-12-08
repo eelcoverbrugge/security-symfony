@@ -38,3 +38,6 @@ services:
         arguments:
             $param: 'some param'
             $adminEmail: '%admin_email%' # refers to parameters above
+
+    App\Entity\SecurityUser:
+        autowire: true
